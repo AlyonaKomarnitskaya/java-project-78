@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class BaseSchema {
     private List<Predicate> conditions = new ArrayList<>();
-    private boolean cheking = false;
+    private boolean checking;
 
     public void addCondition(Predicate condition) {
         conditions.add(condition);
@@ -14,7 +14,7 @@ public class BaseSchema {
 
     public final boolean isValid(Object obj) {
         if (obj == null) {
-            return cheking ? false : true;
+            return !checking;
         }
         for (Predicate condition : conditions) {
             if (!condition.test(obj)) {
@@ -25,7 +25,7 @@ public class BaseSchema {
     }
 
     protected void setRequiredOn() {
-        cheking = true;
+        checking = true;
     }
 
     protected void restart() {
