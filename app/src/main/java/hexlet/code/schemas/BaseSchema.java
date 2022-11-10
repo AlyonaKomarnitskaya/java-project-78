@@ -8,7 +8,7 @@ public class BaseSchema {
     private List<Predicate> conditions = new ArrayList<>();
     private boolean checking;
 
-    public void addCondition(Predicate condition) {
+    public final void addCondition(Predicate condition) {
         conditions.add(condition);
     }
 
@@ -24,11 +24,11 @@ public class BaseSchema {
         return true;
     }
 
-    protected void setRequiredOn() {
+    protected final void setRequiredOn() {
         checking = true;
     }
 
-    protected void restart() {
+    protected final void restart() {
         conditions.clear();
     }
 }
