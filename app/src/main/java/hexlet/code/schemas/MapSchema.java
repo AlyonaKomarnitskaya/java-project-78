@@ -20,7 +20,7 @@ public class MapSchema extends BaseSchema {
         return this;
     }
 
-    public final boolean chekingMap(Map<String, BaseSchema> orig, Map<String, BaseSchema> shapedMap) {
+    private final boolean chekingMap(Map<String, BaseSchema> orig, Map<String, BaseSchema> shapedMap) {
         for (Map.Entry<String, BaseSchema> map : shapedMap.entrySet()) {
             String key = map.getKey();
             if (!map.getValue().isValid(orig.get(key))) {
