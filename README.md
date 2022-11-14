@@ -4,11 +4,14 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/e376bb35c2920d555c95/maintainability)](https://codeclimate.com/github/LenaKomarnitskaya/java-project-78/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e376bb35c2920d555c95/test_coverage)](https://codeclimate.com/github/LenaKomarnitskaya/java-project-78/test_coverage)
 
-### Валидатор данных
+# Валидатор данных
 Валидатор данных – библиотека, с помощью которой можно проверять корректность данных. На данный момент реализована возможность проверять строки, числа и объекты типа Map по валидаторам.
 
-Валидация строк
-import hexlet.code.Validator;
+## Примеры использования:
+
+### Валидация строк
+```
+import hexlet.code.Validator; 
 import hexlet.code.schemas.StringSchema;
 
 Validator v = new Validator();
@@ -31,9 +34,10 @@ schema.contains("whatthe").isValid("what does the fox say"); // false
 
 schema.isValid("what does the fox say"); // false
 // уже false, так как добавлена ещё одна проверка contains("whatthe")
+```
 
-
-Валидация чисел
+### Валидация чисел
+```
 import hexlet.code.Validator;
 import hexlet.code.schemas.NumberSchema;
 
@@ -58,8 +62,9 @@ schema.isValid(5); // true
 schema.isValid(10); // true
 schema.isValid(4); // false
 schema.isValid(11); // false
-
-Валидация объектов типа Map
+```
+### Валидация объектов типа Map
+```
 import hexlet.code.Validator;
 import hexlet.code.schemas.MapSchema;
 
@@ -82,8 +87,9 @@ schema.sizeof(2);
 schema.isValid(data);  // false
 data.put("key2", "value2");
 schema.isValid(data); // true
-
-Вложенная валидация
+```
+### Вложенная валидация
+```
 import hexlet.code.Validator;
 import hexlet.code.schemas.MapSchema;
 import hexlet.code.schemas.BaseSchema;
@@ -117,3 +123,4 @@ Map<String, Object> human4 = new HashMap<>();
 human4.put("name", "Valya");
 human4.put("age", -5);
 schema.isValid(human4); // false
+```
