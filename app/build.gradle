@@ -1,3 +1,6 @@
+// если удаляю application из плагинов, появляется ошибка "A problem occurred evaluating root project 'app'.
+//> Could not find method application() for arguments [build_63dwb85n15t4up9ywabvnsphs$_run_closure3@4ad57efd]
+// on root project 'app' of type org.gradle.api.Project."
 plugins {
     id 'application'
     id 'java'
@@ -54,3 +57,4 @@ jacocoTestReport {
 checkstyle {
     toolVersion '9.2.1'
 }
+
