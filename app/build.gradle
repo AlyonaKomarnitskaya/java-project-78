@@ -1,8 +1,4 @@
-// если удаляю application из плагинов, появляется ошибка "A problem occurred evaluating root project 'app'.
-//> Could not find method application() for arguments [build_63dwb85n15t4up9ywabvnsphs$_run_closure3@4ad57efd]
-// on root project 'app' of type org.gradle.api.Project."
 plugins {
-    id 'application'
     id 'java'
     id 'checkstyle'
     id 'com.adarshr.test-logger' version '3.1.0'
@@ -22,10 +18,6 @@ repositories {
 
 compileJava {
     options.release = 17
-}
-
-application {
-    mainClass = 'hexlet.code.App'
 }
 
 dependencies {
